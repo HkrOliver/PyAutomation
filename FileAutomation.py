@@ -11,13 +11,17 @@ def Get_Paths():
         with io.open("Source_Folder.txt", "r", encoding="utf-8") as file:
             source_folder=file.read()
     else:
-        source_folder = "C:\\Users\OllyB\Downloads\PythonAutomation\DownloadedFiles"
+        script_directory = os.path.dirname(os.path.abspath(__file__))
+        folder_name = "DownloadedFiles"
+        source_folder = os.path.join(script_directory, folder_name)
 
     if os.path.exists("Destination_Folder.txt"):
         with io.open("Destination_Folder.txt", "r", encoding="utf-8") as file:
             destination_folder=file.read() 
     else:
-        destination_folder = "C:\\Users\OllyB\Downloads\PythonAutomation\FolderToMoveTo"
+        script_directory = os.path.dirname(os.path.abspath(__file__))
+        folder_name = "FolderToMoveTo"
+        source_folder = os.path.join(script_directory, folder_name)
 
 Get_Paths()
 
