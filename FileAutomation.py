@@ -26,21 +26,22 @@ def Get_Paths():
 Get_Paths()
 
 file_types = {
-    ".txt": "TextFiles",
-    ".pdf": "PDFs",
-    ".jpg": "Images",
-    ".png": "Images",
-    ".docx": "Word Document",
-    ".xlsx": "Excel Spreadsheet",
-    ".pptx": "PowerPoint Presentation",
-    ".psd": "Photoshop",
-    ".ps1": "Powershell Script",
-    ".bat": "Batch File",
-    ".py": "Python Script",
-    ".cs": "C# File",
-    ".json": "JSON File",
-    ".html": "Hypertext Markup Language",
-    ".css": "Cascading Style Sheets"
+    ".txt": "Text File(s)",
+    ".pdf": "PDF(s)",
+    ".png": "Image(s)",
+    ".jpg": "Image(s)",
+    ".gif": "Animated Images",
+    ".docx": "Word Document(s)",
+    ".xlsx": "Excel Spreadsheet(s)",
+    ".pptx": "PowerPoint Presentation(s)",
+    ".psd": "Photoshop(s)",
+    ".ps1": "Powershell Script(s)",
+    ".bat": "Batch File(s)",
+    ".py": "Python Script(s)",
+    ".cs": "C# File(s)",
+    ".json": "JSON File(s)",
+    ".html": "HTML File(s)",
+    ".css": "CSS FIle(s)"
 }
 
 class FileHandler(FileSystemEventHandler):
