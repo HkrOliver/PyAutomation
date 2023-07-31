@@ -18,11 +18,11 @@ def Get_Path(button_pressed):
 
 
 
-source_folder_Label=tk.Label(window, text="Source Folder: "); source_folder_Label.pack()
-source_folder_Textbox=tk.Text(window); source_folder_Textbox.pack()
+source_folder_Label=tk.Label(window, text="Source Folder: "); source_folder_Label.pack(padx=1, pady=1)
+source_folder_Textbox=tk.Text(window); source_folder_Textbox.pack(padx=2, pady=2)
 
-destination_folder_Label=tk.Label(window, text="Destination Folder: "); destination_folder_Label.pack()
-destination_folder_Textbox=tk.Text(window); destination_folder_Textbox.pack()
+destination_folder_Label=tk.Label(window, text="Destination Folder: "); destination_folder_Label.pack(padx=1, pady=1)
+destination_folder_Textbox=tk.Text(window); destination_folder_Textbox.pack(padx=2, pady=2)
 
 
 window.mainloop()
