@@ -30,7 +30,7 @@ file_types = {
     ".pdf": "PDF(s)",
     ".png": "Image(s)",
     ".jpg": "Image(s)",
-    ".gif": "Animated Images",
+    ".gif": "Animated Image(s)",
     ".docx": "Word Document(s)",
     ".xlsx": "Excel Spreadsheet(s)",
     ".pptx": "PowerPoint Presentation(s)",
