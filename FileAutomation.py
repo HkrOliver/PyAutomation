@@ -28,7 +28,6 @@ Get_Paths()
 file_types = {
     ".txt": "Text File(s)",
     ".pdf": "PDF(s)",
-    ".png": "Image(s)",
     ".jpg": "Image(s)",
     ".gif": "Animated Image(s)",
     ".docx": "Word Document(s)",
@@ -41,7 +40,8 @@ file_types = {
     ".cs": "C# File(s)",
     ".json": "JSON File(s)",
     ".html": "HTML File(s)",
-    ".css": "CSS FIle(s)"
+    ".css": "CSS FIle(s)",
+    ".wav": "Audio File(s)",
 }
 
 class FileHandler(FileSystemEventHandler):
