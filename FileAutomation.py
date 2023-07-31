@@ -1,7 +1,7 @@
-from Modules import os  
-from Modules import time
-from Modules import shutil
-from Modules import io
+import os  
+import time
+import shutil
+import io
 from watchdog.observers import Observer ; from watchdog.events import FileSystemEventHandler
 
 def Get_Paths():
