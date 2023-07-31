@@ -8,6 +8,16 @@ window = tk.Tk(); window.title("PyAutomation"); window.geometry("400x400")
 
 source_folder=""; destination_folder=""
 
+def Get_Path(button_pressed):
+    if button_pressed == "source_folder_Button":
+        source_folder=filedialog.askdirectory()
+    
+    if button_pressed=="destination_folder_Button":
+        destination_folder=filedialog.askdirectory()
+
+
+
+
 source_folder_Label=tk.Label(window, text="Source Folder: "); source_folder_Label.pack()
 source_folder_Textbox=tk.Text(window); source_folder_Textbox.pack()
 
