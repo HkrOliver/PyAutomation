@@ -51,21 +51,23 @@ source_folder_Label.grid(row=0, column=0, padx=10, pady=10)
 source_folder_Textbox = tk.Text(window, width=20, height=2)
 source_folder_Textbox.grid(row=0, column=1, padx=10, pady=10)
 
-source_folder_Browse = tk.Button(window, text="Browse", width=20, height=2)
-source_folder_Browse.grid(row=1, column=1, padx=50, pady=5)  # Adjust the 'pady' value
+source_folder_Browse = tk.Button(window, text="Browse", width=20, height=2, command=lambda: Get_Path("source_folder_Browse"))
+source_folder_Browse.grid(row=1, column=1, padx=50, pady=5)  
 
 destination_folder_Label = tk.Label(window, text="Destination Folder:")
-destination_folder_Label.grid(row=2, column=0, padx=10, pady=10)  # Move to the next row
+destination_folder_Label.grid(row=2, column=0, padx=10, pady=10)  
 
 destination_folder_Textbox = tk.Text(window, width=20, height=2)
 destination_folder_Textbox.grid(row=2, column=1, padx=10, pady=10)
 
-destination_folder_Browse = tk.Button(window, text="Browse", width=20, height=2)
-destination_folder_Browse.grid(row=3, column=1, padx=50, pady=5)  # Adjust the 'pady' value
+destination_folder_Browse = tk.Button(window, text="Browse", width=20, height=2, command=lambda: Get_Path("destination_folder_Browse"))
+destination_folder_Browse.grid(row=3, column=1, padx=50, pady=5)
 
 save_button = tk.Button(window, text="Save Folders", command=save_folders)
 save_button.grid(row=4, columnspan=2, padx=10, pady=10)
 
+clear_button = tk.Button(window, text="Clear", command=Clear_Paths)
+clear_button.grid(row=4,columnspan=2, padx=10, pady=10)
 
 
 window.mainloop()
