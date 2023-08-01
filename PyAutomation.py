@@ -6,19 +6,44 @@ from tkinter import filedialog # For the user to select the source and destinati
 
 window = tk.Tk(); window.title("PyAutomation"); window.geometry("400x400")
 
-source_folder=""; destination_folder=""
+source_folder=""; destination_folder=""; folder_path=""
 
 def Get_Path(button_pressed):
-    if button_pressed == "source_folder_Button":
-        source_folder=filedialog.askdirectory()
+    if button_pressed == "source_folder_Browse":
+        folder_path=filedialog.askdirectory()
+        source_folder_Textbox.delete("1.0", "end")
+        source_folder_Textbox.insert("1.0", folder_path)
     
-    if button_pressed=="destination_folder_Button":
-        destination_folder=filedialog.askdirectory()
+    if button_pressed=="destination_folder_Browse":
+        folder_path=filedialog.askdirectory()
+        destination_folder_Textbox.delete("1.0", "end")
+        destination_folder_Textbox.insert("1.0", folder_path)
+
+def Load_Paths():
+    if os.path.exists("Source_Folder.txt"):
+        with io.open("Source_Folder.txt") as file:
+            source_folder=file.read()
+            source_folder_Textbox.delete("1.0", "end")
+            source_folder_Textbox.insert("1.0", source_folder)
+    
+    if os.path.exists("Destination_Folder.txt"):
+        with io.open("Destination_Folder.txt") as file:
+            destination_folder=file.read()
+            destination_folder_Textbox.delete("1.0", "end")
+            destination_folder_Textbox.insert("1.0", destination_folder)
+
+def Clear_Paths():
+    source_folder_Textbox.delete("1.0", "end"); destination_folder_Textbox.delete("1.0", "end")
 
 def save_folders():
     source_folder = source_folder_Textbox.get("1.0", "end-io")
     destination_folder = destination_folder_Textbox.get("1.0", "end-io")
-    window.destroy()
+    
+    with io.open("Source_Folder.txt") as file:
+        file.write(source_folder)
+
+    with io.open("Destination_Folder") as file:
+        file.write(destination_folder)
 
 source_folder_Label = tk.Label(window, text="Source Folder:")
 source_folder_Label.grid(row=0, column=0, padx=10, pady=10)
