@@ -7,21 +7,24 @@ from watchdog.observers import Observer ; from watchdog.events import FileSystem
 def Get_Paths():
     global source_folder
     global destination_folder
-    if os.path.exists("Source_Folder.txt"):
-        with io.open("Source_Folder.txt", "r", encoding="utf-8") as file:
-            source_folder=file.read()
+
+    if os.path.exists("Source_Folder.txt"):   
+        with io.open("Source_Folder.txt", "r") as file:
+            if file.read() > 0:
+                source_folder=file.read()
+            elif file.read() <= 0:
+                source_folder="DownloadedFiles"
     else:
-        script_directory = os.path.dirname(os.path.abspath(__file__))
-        folder_name = "DownloadedFiles"
-        source_folder = os.path.join(script_directory, folder_name)
+        source_folder = "DownloadedFiles"
 
     if os.path.exists("Destination_Folder.txt"):
-        with io.open("Destination_Folder.txt", "r", encoding="utf-8") as file:
-            destination_folder=file.read() 
+        with io.open("Destination_Folder.txt", "r") as file:
+            if file.read() >= 0:
+                destination_folder=file.read()
+            elif file.read() <= 0:
+                destination_folder="FolderToMoveTo"
     else:
-        script_directory = os.path.dirname(os.path.abspath(__file__))
-        folder_name = "FolderToMoveTo"
-        source_folder = os.path.join(script_directory, folder_name)
+        destination_folder ="FolderToMoveTo"
 
 Get_Paths()
 
@@ -42,6 +45,7 @@ file_types = {
     ".html": "HTML File(s)",
     ".css": "CSS FIle(s)",
     ".wav": "Audio File(s)",
+    ".mp4": "Video File(s)"
 }
 
 class FileHandler(FileSystemEventHandler):
