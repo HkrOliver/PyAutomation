@@ -80,7 +80,7 @@ save_button.grid(row=4, columnspan=4, padx=10, pady=10)
 clear_button = tk.Button(window, text="Clear", command=Clear_Paths)
 clear_button.grid(row=4,columnspan=1, padx=10, pady=10)
 
-automate_Button = tk.Button(window, text="Automate", command=Automation)
+automate_Button = tk.Button(window, text="Automate", command=Start_Automation)
 automate_Button.grid(row=4, columnspan=2, padx=10, pady=10)
 
 window.mainloop()
